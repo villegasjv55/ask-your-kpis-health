@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Project data (too big for GitHub; rebuilt by ./run.sh --rebuild)
+data/raw/
+data/warehouse/
+*.jar
+
+# Mac
+.DS_Store
+
+# Streamlit secrets (never commit API keys)
+.streamlit/secrets.toml

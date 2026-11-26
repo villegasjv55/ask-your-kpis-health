@@ -1,0 +1,126 @@
+
+=== raw_allergies (1,100 rows, 15 columns) ===
+START [DATE], STOP [VARCHAR], PATIENT [VARCHAR], ENCOUNTER [VARCHAR], CODE [BIGINT], SYSTEM [VARCHAR], DESCRIPTION [VARCHAR], TYPE [VARCHAR], CATEGORY [VARCHAR], REACTION1 [BIGINT], DESCRIPTION1 [VARCHAR], SEVERITY1 [VARCHAR], REACTION2 [BIGINT], DESCRIPTION2 [VARCHAR], SEVERITY2 [VARCHAR]
+       START  STOP                   PATIENT                 ENCOUNTER       CODE   SYSTEM               DESCRIPTION     TYPE     CATEGORY  REACTION1       DESCRIPTION1 SEVERITY1  REACTION2     DESCRIPTION2 SEVERITY2
+0 2000-03-10  None  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-48...  609328004  Unknown  Allergic disposition ...  allergy  environment       <NA>                NaN       NaN       <NA>              NaN       NaN
+1 2000-03-10  None  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-48...  111088007  Unknown         Latex (substance)  allergy  environment  267036007  Dyspnea (finding)  MODERATE  247472004  Wheal (finding)      MILD
+2 2000-03-10  None  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-48...   84489001  Unknown           Mold (organism)  allergy  environment       <NA>                NaN       NaN       <NA>              NaN       NaN
+
+=== raw_careplans (3,870 rows, 9 columns) ===
+Id [VARCHAR], START [DATE], STOP [DATE], PATIENT [VARCHAR], ENCOUNTER [VARCHAR], CODE [BIGINT], DESCRIPTION [VARCHAR], REASONCODE [BIGINT], REASONDESCRIPTION [VARCHAR]
+                         Id      START       STOP                   PATIENT                 ENCOUNTER       CODE               DESCRIPTION  REASONCODE         REASONDESCRIPTION
+0  4f083ce3-f12b-bb4b-96... 2000-02-27        NaT  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-95...  384758001  Self-care interventio...        <NA>                       NaN
+1  4f083ce3-f12b-bb4b-37... 2004-02-18        NaT  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-90...  699728000  Asthma self managemen...   233678006  Childhood asthma (dis...
+2  4f083ce3-f12b-bb4b-4d... 2018-02-21 2018-03-10  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-81...  225358003  Wound care (regime/th...   283371005  Laceration of forearm...
+
+=== raw_claims (156,508 rows, 31 columns) ===
+Id [VARCHAR], PATIENTID [VARCHAR], PROVIDERID [VARCHAR], PRIMARYPATIENTINSURANCEID [VARCHAR], SECONDARYPATIENTINSURANCEID [VARCHAR], DEPARTMENTID [BIGINT], PATIENTDEPARTMENTID [BIGINT], DIAGNOSIS1 [BIGINT], DIAGNOSIS2 [BIGINT], DIAGNOSIS3 [BIGINT], DIAGNOSIS4 [BIGINT], DIAGNOSIS5 [BIGINT], DIAGNOSIS6 [BIGINT], DIAGNOSIS7 [BIGINT], DIAGNOSIS8 [BIGINT], REFERRINGPROVIDERID [VARCHAR], APPOINTMENTID [VARCHAR], CURRENTILLNESSDATE [TIMESTAMP WITH TIME ZONE], SERVICEDATE [TIMESTAMP WITH TIME ZONE], SUPERVISINGPROVIDERID [VARCHAR], STATUS1 [VARCHAR], STATUS2 [VARCHAR], STATUSP [VARCHAR], OUTSTANDING1 [DOUBLE], OUTSTANDING2 [DOUBLE], OUTSTANDINGP [DOUBLE], LASTBILLEDDATE1 [TIMESTAMP WITH TIME ZONE], LASTBILLEDDATE2 [TIMESTAMP WITH TIME ZONE], LASTBILLEDDATEP [TIMESTAMP WITH TIME ZONE], HEALTHCARECLAIMTYPEID1 [BIGINT], HEALTHCARECLAIMTYPEID2 [BIGINT]
+                         Id                 PATIENTID                PROVIDERID PRIMARYPATIENTINSURANCEID SECONDARYPATIENTINSURANCEID  DEPARTMENTID  PATIENTDEPARTMENTID  DIAGNOSIS1  DIAGNOSIS2  DIAGNOSIS3  DIAGNOSIS4  DIAGNOSIS5  DIAGNOSIS6  DIAGNOSIS7  DIAGNOSIS8 REFERRINGPROVIDERID             APPOINTMENTID        CURRENTILLNESSDATE               SERVICEDATE     SUPERVISINGPROVIDERID STATUS1 STATUS2 STATUSP  OUTSTANDING1  OUTSTANDING2  OUTSTANDINGP           LASTBILLEDDATE1 LASTBILLEDDATE2           LASTBILLEDDATEP  HEALTHCARECLAIMTYPEID1  HEALTHCARECLAIMTYPEID2
+0  aee7bbe1-0c45-c028-c6...  aee7bbe1-0c45-c028-1e...  7c60874d-f652-3717-b6...  b046940f-1664-3047-bc...                      None              10                   10   314529007        <NA>        <NA>        <NA>        <NA>        <NA>        <NA>        <NA>                None  aee7bbe1-0c45-c028-1b... 2026-02-12 02:31:39-05:00 2026-02-12 02:31:39-05:00  7c60874d-f652-3717-b6...  CLOSED    None  CLOSED           0.0           NaN           0.0 2026-02-12 02:46:39-05:00             NaT 2026-02-12 02:46:39-05:00                       1                       0
+1  aee7bbe1-0c45-c028-aa...  aee7bbe1-0c45-c028-1e...  7c60874d-f652-3717-b6...  b046940f-1664-3047-bc...                      None              10                   10   410620009        <NA>        <NA>        <NA>        <NA>        <NA>        <NA>        <NA>                None  aee7bbe1-0c45-c028-38... 2026-03-19 03:31:39-04:00 2026-03-19 03:31:39-04:00  7c60874d-f652-3717-b6...  CLOSED    None  CLOSED           0.0           NaN           0.0 2026-03-19 03:46:39-04:00             NaT 2026-03-19 03:46:39-04:00                       1                       0
+2  aee7bbe1-0c45-c028-94...  aee7bbe1-0c45-c028-1e...  7c60874d-f652-3717-b6...  b046940f-1664-3047-bc...                      None              10                   10   314529007        <NA>        <NA>        <NA>        <NA>        <NA>        <NA>        <NA>                None  aee7bbe1-0c45-c028-0c... 2026-05-21 03:31:39-04:00 2026-05-21 03:31:39-04:00  7c60874d-f652-3717-b6...  CLOSED    None  CLOSED           0.0           NaN           0.0 2026-05-21 03:46:39-04:00             NaT 2026-05-21 03:46:39-04:00                       1                       0
+
+=== raw_claims_transactions (1,649,643 rows, 33 columns) ===
+ID [VARCHAR], CLAIMID [VARCHAR], CHARGEID [BIGINT], PATIENTID [VARCHAR], TYPE [VARCHAR], AMOUNT [DOUBLE], METHOD [VARCHAR], FROMDATE [TIMESTAMP WITH TIME ZONE], TODATE [TIMESTAMP WITH TIME ZONE], PLACEOFSERVICE [VARCHAR], PROCEDURECODE [VARCHAR], MODIFIER1 [VARCHAR], MODIFIER2 [VARCHAR], DIAGNOSISREF1 [BIGINT], DIAGNOSISREF2 [BIGINT], DIAGNOSISREF3 [BIGINT], DIAGNOSISREF4 [BIGINT], UNITS [BIGINT], DEPARTMENTID [BIGINT], NOTES [VARCHAR], UNITAMOUNT [DOUBLE], TRANSFEROUTID [BIGINT], TRANSFERTYPE [VARCHAR], PAYMENTS [DOUBLE], ADJUSTMENTS [DOUBLE], TRANSFERS [DOUBLE], OUTSTANDING [DOUBLE], APPOINTMENTID [VARCHAR], LINENOTE [VARCHAR], PATIENTINSURANCEID [VARCHAR], FEESCHEDULEID [BIGINT], PROVIDERID [VARCHAR], SUPERVISINGPROVIDERID [VARCHAR]
+                         ID                   CLAIMID  CHARGEID                 PATIENTID         TYPE  AMOUNT METHOD                  FROMDATE                    TODATE            PLACEOFSERVICE PROCEDURECODE MODIFIER1 MODIFIER2  DIAGNOSISREF1  DIAGNOSISREF2  DIAGNOSISREF3  DIAGNOSISREF4  UNITS  DEPARTMENTID                     NOTES  UNITAMOUNT  TRANSFEROUTID TRANSFERTYPE  PAYMENTS  ADJUSTMENTS  TRANSFERS  OUTSTANDING             APPOINTMENTID LINENOTE        PATIENTINSURANCEID  FEESCHEDULEID                PROVIDERID     SUPERVISINGPROVIDERID
+0  85fa941f-386a-4796-72...  aee7bbe1-0c45-c028-c6...         0  aee7bbe1-0c45-c028-1e...       CHARGE  163.63   None 2026-02-12 02:31:39-05:00 2026-02-12 02:46:39-05:00  697dfe22-8a16-394a-b5...     410620009      None      None              1           <NA>           <NA>           <NA>      1            10  Well child visit (pro...      163.63           <NA>            1       0.0          0.0        NaN         0.00  aee7bbe1-0c45-c028-1b...     None  aee7bbe1-0c45-c028-9f...              1  7c60874d-f652-3717-b6...  7c60874d-f652-3717-b6...
+1  0bf53e3e-70d4-8f2d-e4...  aee7bbe1-0c45-c028-c6...         1  aee7bbe1-0c45-c028-1e...  TRANSFEROUT     NaN   None 2026-02-12 02:31:39-05:00 2026-02-12 02:46:39-05:00  697dfe22-8a16-394a-b5...     410620009      None      None              1           <NA>           <NA>           <NA>      1            10  Well child visit (pro...        0.00           <NA>          NaN       0.0          0.0     163.63       163.63  aee7bbe1-0c45-c028-1b...     None  aee7bbe1-0c45-c028-9f...              1  7c60874d-f652-3717-b6...  7c60874d-f652-3717-b6...
+2  17ea8c7c-e1a9-1e5a-c8...  aee7bbe1-0c45-c028-c6...         2  aee7bbe1-0c45-c028-1e...   TRANSFERIN  163.63   None 2026-02-12 02:31:39-05:00 2026-02-12 02:46:39-05:00  697dfe22-8a16-394a-b5...     410620009      None      None              1           <NA>           <NA>           <NA>      1            10  Well child visit (pro...        0.00              1            p       0.0          0.0     163.63       163.63  aee7bbe1-0c45-c028-1b...     None  aee7bbe1-0c45-c028-9f...              1  7c60874d-f652-3717-b6...  7c60874d-f652-3717-b6...
+
+=== raw_conditions (45,444 rows, 7 columns) ===
+START [DATE], STOP [DATE], PATIENT [VARCHAR], ENCOUNTER [VARCHAR], SYSTEM [VARCHAR], CODE [BIGINT], DESCRIPTION [VARCHAR]
+       START       STOP                   PATIENT                 ENCOUNTER     SYSTEM       CODE               DESCRIPTION
+0 2026-02-12 2026-03-19  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-1b...  SNOMED-CT  314529007  Medication review due...
+1 2026-05-21 2026-05-21  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-0c...  SNOMED-CT  314529007  Medication review due...
+2 2026-07-23        NaT  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-e4...  SNOMED-CT  314529007  Medication review due...
+
+=== raw_devices (6,985 rows, 7 columns) ===
+START [TIMESTAMP WITH TIME ZONE], STOP [TIMESTAMP WITH TIME ZONE], PATIENT [VARCHAR], ENCOUNTER [VARCHAR], CODE [BIGINT], DESCRIPTION [VARCHAR], UDI [VARCHAR]
+                      START                      STOP                   PATIENT                 ENCOUNTER       CODE               DESCRIPTION                       UDI
+0 2018-05-21 11:53:31-04:00                       NaT  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-56...  225738002  Operating room (envir...  (01)25617304221598(11...
+1 2019-06-03 11:15:24-04:00 2019-06-03 11:15:24-04:00  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-15...  706298007  Dental x-ray system (...  (01)68694572264232(11...
+2 2021-06-07 12:08:25-04:00 2021-06-07 12:08:25-04:00  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-c3...  706298007  Dental x-ray system (...  (01)73145049963521(11...
+
+=== raw_encounters (80,909 rows, 15 columns) ===
+Id [VARCHAR], START [TIMESTAMP WITH TIME ZONE], STOP [TIMESTAMP WITH TIME ZONE], PATIENT [VARCHAR], ORGANIZATION [VARCHAR], PROVIDER [VARCHAR], PAYER [VARCHAR], ENCOUNTERCLASS [VARCHAR], CODE [BIGINT], DESCRIPTION [VARCHAR], BASE_ENCOUNTER_COST [DOUBLE], TOTAL_CLAIM_COST [DOUBLE], PAYER_COVERAGE [DOUBLE], REASONCODE [BIGINT], REASONDESCRIPTION [VARCHAR]
+                         Id                     START                      STOP                   PATIENT              ORGANIZATION                  PROVIDER                     PAYER ENCOUNTERCLASS       CODE               DESCRIPTION  BASE_ENCOUNTER_COST  TOTAL_CLAIM_COST  PAYER_COVERAGE  REASONCODE REASONDESCRIPTION
+0  aee7bbe1-0c45-c028-1b... 2026-02-12 02:31:39-05:00 2026-02-12 02:46:39-05:00  aee7bbe1-0c45-c028-1e...  697dfe22-8a16-394a-b5...  7c60874d-f652-3717-b6...  b046940f-1664-3047-bc...       wellness  410620009  Well child visit (pro...               163.63            438.09             0.0        <NA>              None
+1  aee7bbe1-0c45-c028-38... 2026-03-19 03:31:39-04:00 2026-03-19 03:46:39-04:00  aee7bbe1-0c45-c028-1e...  697dfe22-8a16-394a-b5...  7c60874d-f652-3717-b6...  b046940f-1664-3047-bc...       wellness  410620009  Well child visit (pro...               163.63            607.55             0.0        <NA>              None
+2  aee7bbe1-0c45-c028-0c... 2026-05-21 03:31:39-04:00 2026-05-21 03:46:39-04:00  aee7bbe1-0c45-c028-1e...  697dfe22-8a16-394a-b5...  7c60874d-f652-3717-b6...  b046940f-1664-3047-bc...       wellness  410620009  Well child visit (pro...               163.63           2075.33             0.0        <NA>              None
+
+=== raw_imaging_studies (84,756 rows, 13 columns) ===
+Id [VARCHAR], DATE [TIMESTAMP WITH TIME ZONE], PATIENT [VARCHAR], ENCOUNTER [VARCHAR], SERIES_UID [VARCHAR], BODYSITE_CODE [BIGINT], BODYSITE_DESCRIPTION [VARCHAR], MODALITY_CODE [VARCHAR], MODALITY_DESCRIPTION [VARCHAR], INSTANCE_UID [VARCHAR], SOP_CODE [VARCHAR], SOP_DESCRIPTION [VARCHAR], PROCEDURE_CODE [BIGINT]
+                         Id                      DATE                   PATIENT                 ENCOUNTER                SERIES_UID  BODYSITE_CODE      BODYSITE_DESCRIPTION MODALITY_CODE MODALITY_DESCRIPTION              INSTANCE_UID                  SOP_CODE           SOP_DESCRIPTION  PROCEDURE_CODE
+0  4f083ce3-f12b-bb4b-2e... 2019-06-03 11:15:24-04:00  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-15...  1.2.840.99999999.1.36...      700016008  Structure of region o...            DX  Digital Radiography  1.2.840.99999999.1.1....  1.2.840.10008.5.1.4.1...  Digital Intra-Oral X-...       241046008
+1  4f083ce3-f12b-bb4b-62... 2021-06-07 12:08:25-04:00  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-c3...  1.2.840.99999999.1.41...      700016008  Structure of region o...            DX  Digital Radiography  1.2.840.99999999.1.1....  1.2.840.10008.5.1.4.1...  Digital Intra-Oral X-...       241046008
+2  4f083ce3-f12b-bb4b-22... 2025-06-30 11:20:38-04:00  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-22...  1.2.840.99999999.1.42...      700016008  Structure of region o...            DX  Digital Radiography  1.2.840.99999999.1.1....  1.2.840.10008.5.1.4.1...  Digital Intra-Oral X-...       241046008
+
+=== raw_immunizations (16,426 rows, 6 columns) ===
+DATE [TIMESTAMP WITH TIME ZONE], PATIENT [VARCHAR], ENCOUNTER [VARCHAR], CODE [VARCHAR], DESCRIPTION [VARCHAR], BASE_COST [DOUBLE]
+                       DATE                   PATIENT                 ENCOUNTER CODE               DESCRIPTION  BASE_COST
+0 2026-02-12 02:31:39-05:00  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-1b...   08  Hep B  adolescent or ...      136.0
+1 2026-03-19 03:31:39-04:00  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-38...   08  Hep B  adolescent or ...      136.0
+2 2026-05-21 03:31:39-04:00  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-0c...   49             Hib (PRP-OMP)      136.0
+
+=== raw_medications (75,599 rows, 13 columns) ===
+START [TIMESTAMP WITH TIME ZONE], STOP [TIMESTAMP WITH TIME ZONE], PATIENT [VARCHAR], PAYER [VARCHAR], ENCOUNTER [VARCHAR], CODE [BIGINT], DESCRIPTION [VARCHAR], BASE_COST [DOUBLE], PAYER_COVERAGE [DOUBLE], DISPENSES [BIGINT], TOTALCOST [DOUBLE], REASONCODE [BIGINT], REASONDESCRIPTION [VARCHAR]
+                      START                      STOP                   PATIENT                     PAYER                 ENCOUNTER     CODE               DESCRIPTION  BASE_COST  PAYER_COVERAGE  DISPENSES  TOTALCOST  REASONCODE         REASONDESCRIPTION
+0 2000-03-10 19:55:40-05:00                       NaT  4f083ce3-f12b-bb4b-73...  26aab0cd-6aba-3e1b-ac...  4f083ce3-f12b-bb4b-48...   665078  Loratadine 5 MG Chewa...     215.23          215.23        325   69949.75        <NA>                       NaN
+1 2000-03-10 19:55:40-05:00                       NaT  4f083ce3-f12b-bb4b-73...  26aab0cd-6aba-3e1b-ac...  4f083ce3-f12b-bb4b-48...  1870230  NDA020800 0.3 ML Epin...     106.32          106.32        325   34554.00        <NA>                       NaN
+2 2016-04-25 09:27:47-04:00 2017-05-01 09:27:47-04:00  4f083ce3-f12b-bb4b-73...  26aab0cd-6aba-3e1b-ac...  4f083ce3-f12b-bb4b-9c...   859088  NDA020983 200 ACTUAT ...     365.89          365.89          1     365.89   233678006  Childhood asthma (dis...
+
+=== raw_observations (1,044,730 rows, 9 columns) ===
+DATE [TIMESTAMP WITH TIME ZONE], PATIENT [VARCHAR], ENCOUNTER [VARCHAR], CATEGORY [VARCHAR], CODE [VARCHAR], DESCRIPTION [VARCHAR], VALUE [VARCHAR], UNITS [VARCHAR], TYPE [VARCHAR]
+                       DATE                   PATIENT                 ENCOUNTER     CATEGORY     CODE               DESCRIPTION VALUE    UNITS     TYPE
+0 2026-02-12 02:31:39-05:00  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-1b...  vital-signs   8302-2               Body Height  54.3       cm  numeric
+1 2026-02-12 02:31:39-05:00  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-1b...  vital-signs  72514-3  Pain severity - 0-10 ...   4.0  {score}  numeric
+2 2026-02-12 02:31:39-05:00  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-1b...  vital-signs  29463-7               Body Weight   4.5       kg  numeric
+
+=== raw_organizations (1,765 rows, 12 columns) ===
+Id [VARCHAR], NAME [VARCHAR], ADDRESS [VARCHAR], CITY [VARCHAR], STATE [VARCHAR], ZIP [BIGINT], LAT [DOUBLE], LON [DOUBLE], PHONE [VARCHAR], REVENUE [DOUBLE], UTILIZATION [BIGINT], NPI [BIGINT]
+                         Id                      NAME                ADDRESS     CITY STATE        ZIP        LAT        LON       PHONE  REVENUE  UTILIZATION         NPI
+0  86bc61ed-4a20-353b-a1...  INTERNAL MEDICINE ASS...  9063 POINT CYPRESS DR  ORLANDO    FL  328365475  28.542111 -81.379030  3212140028      0.0         2151  1609820125
+1  34afeffb-3b50-3b12-80...  SKIN WELLNESS PHYSICI...      8625 COLLIER BLVD   NAPLES    FL  341143550  26.114256 -81.687258  2672102034      0.0           14  1275952244
+2  8ce7e2ba-6b9c-3573-aa...  OCEANSIDE URGENT CARE...   11786 SE FEDERAL HWY  JUPITER    FL  334584631  26.934225 -80.094209  7725464215      0.0          308  1194060202
+
+=== raw_patients (1,145 rows, 28 columns) ===
+Id [VARCHAR], BIRTHDATE [DATE], DEATHDATE [DATE], SSN [VARCHAR], DRIVERS [VARCHAR], PASSPORT [VARCHAR], PREFIX [VARCHAR], FIRST [VARCHAR], MIDDLE [VARCHAR], LAST [VARCHAR], SUFFIX [VARCHAR], MAIDEN [VARCHAR], MARITAL [VARCHAR], RACE [VARCHAR], ETHNICITY [VARCHAR], GENDER [VARCHAR], BIRTHPLACE [VARCHAR], ADDRESS [VARCHAR], CITY [VARCHAR], STATE [VARCHAR], COUNTY [VARCHAR], FIPS [BIGINT], ZIP [VARCHAR], LAT [DOUBLE], LON [DOUBLE], HEALTHCARE_EXPENSES [DOUBLE], HEALTHCARE_COVERAGE [DOUBLE], INCOME [BIGINT]
+                         Id  BIRTHDATE  DEATHDATE          SSN    DRIVERS    PASSPORT PREFIX        FIRST     MIDDLE        LAST SUFFIX MAIDEN MARITAL   RACE    ETHNICITY GENDER                BIRTHPLACE                   ADDRESS            CITY    STATE               COUNTY   FIPS    ZIP        LAT        LON  HEALTHCARE_EXPENSES  HEALTHCARE_COVERAGE  INCOME
+0  aee7bbe1-0c45-c028-1e... 2026-02-12        NaT  999-21-5544        NaN         NaN    NaN  Wilfredo622  Isaiah615  Fritsch593   None   None     NaN  white  nonhispanic      M   Cape Coral  Florida  US  265 Schamberger Rapid...       Gibsonton  Florida  Hillsborough County  12057  33534  27.844592 -82.407512              4611.69               260.62  102779
+1  4f083ce3-f12b-bb4b-73... 1999-03-08        NaT  999-78-6352  S99923267  X16116240X    Mr.   Ezekiel373   Leslie90   Walter473   None   None     NaN  white  nonhispanic      M   Cape Coral  Florida  US    332 Schulist Underpass   Wesley Chapel  Florida         Pasco County  12101  33544  28.224528 -82.261687            223867.01            905469.68  141031
+2  ba419d35-0dfe-8af7-34... 1925-11-12 1983-08-19  999-49-6110  S99928344  X95326637X    Ms.     Corie618   Sofia418     Jast432   None   None       S  white     hispanic      F  Brownsville  Florida  US     1028 Hoeger Crossroad  Bonita Springs  Florida           Lee County  12021  34119  26.359658 -81.663853            326544.25            866269.24   18756
+
+=== raw_payer_transitions (50,705 rows, 8 columns) ===
+PATIENT [VARCHAR], MEMBERID [VARCHAR], START_DATE [TIMESTAMP WITH TIME ZONE], END_DATE [TIMESTAMP WITH TIME ZONE], PAYER [VARCHAR], SECONDARY_PAYER [VARCHAR], PLAN_OWNERSHIP [VARCHAR], OWNER_NAME [VARCHAR]
+                    PATIENT                  MEMBERID                START_DATE                  END_DATE                     PAYER SECONDARY_PAYER PLAN_OWNERSHIP              OWNER_NAME
+0  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-9f... 2026-02-12 02:31:39-05:00 2027-02-12 02:31:39-05:00  b046940f-1664-3047-bc...            None       Guardian     Kenny207 Fritsch593
+1  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-c0... 1999-03-08 08:27:47-05:00 2000-03-13 08:27:47-05:00  26aab0cd-6aba-3e1b-ac...            None       Guardian  Rosella686 Nitzsche158
+2  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-c0... 2000-03-13 08:27:47-05:00 2001-03-12 08:27:47-05:00  26aab0cd-6aba-3e1b-ac...            None       Guardian  Rosella686 Nitzsche158
+
+=== raw_payers (10 rows, 22 columns) ===
+Id [VARCHAR], NAME [VARCHAR], OWNERSHIP [VARCHAR], ADDRESS [VARCHAR], CITY [VARCHAR], STATE_HEADQUARTERED [VARCHAR], ZIP [VARCHAR], PHONE [VARCHAR], AMOUNT_COVERED [DOUBLE], AMOUNT_UNCOVERED [DOUBLE], REVENUE [DOUBLE], COVERED_ENCOUNTERS [BIGINT], UNCOVERED_ENCOUNTERS [BIGINT], COVERED_MEDICATIONS [BIGINT], UNCOVERED_MEDICATIONS [BIGINT], COVERED_PROCEDURES [BIGINT], UNCOVERED_PROCEDURES [BIGINT], COVERED_IMMUNIZATIONS [BIGINT], UNCOVERED_IMMUNIZATIONS [BIGINT], UNIQUE_CUSTOMERS [BIGINT], QOLS_AVG [DOUBLE], MEMBER_MONTHS [BIGINT]
+                         Id           NAME   OWNERSHIP ADDRESS  CITY STATE_HEADQUARTERED   ZIP PHONE  AMOUNT_COVERED  AMOUNT_UNCOVERED     REVENUE  COVERED_ENCOUNTERS  UNCOVERED_ENCOUNTERS  COVERED_MEDICATIONS  UNCOVERED_MEDICATIONS  COVERED_PROCEDURES  UNCOVERED_PROCEDURES  COVERED_IMMUNIZATIONS  UNCOVERED_IMMUNIZATIONS  UNIQUE_CUSTOMERS  QOLS_AVG  MEMBER_MONTHS
+0  a735bf55-83e9-331a-89...       Medicare  GOVERNMENT    None  None                None  None  None    1.584862e+08        8442885.71  12671939.7               58574                     0                81659                      0              120542                     0                   7442                        0               399  0.691355          77220
+1  df166300-5a78-3502-a4...       Medicaid  GOVERNMENT    None  None                None  None  None    8.543035e+07        1586075.89    605070.0               19431                     0                 4586                      0               39038                     0                   9592                        0               410  0.959784          61104
+2  d18ef2e6-ef40-324c-be...  Dual Eligible  GOVERNMENT    None  None                None  None  None    7.629870e+06          47459.82     25650.0                1108                     0                  345                      0                2037                     0                    279                        0                28  0.815197           2604
+
+=== raw_procedures (206,270 rows, 10 columns) ===
+START [TIMESTAMP WITH TIME ZONE], STOP [TIMESTAMP WITH TIME ZONE], PATIENT [VARCHAR], ENCOUNTER [VARCHAR], SYSTEM [VARCHAR], CODE [BIGINT], DESCRIPTION [VARCHAR], BASE_COST [DOUBLE], REASONCODE [BIGINT], REASONDESCRIPTION [VARCHAR]
+                      START                      STOP                   PATIENT                 ENCOUNTER     SYSTEM       CODE               DESCRIPTION  BASE_COST  REASONCODE REASONDESCRIPTION
+0 2026-03-19 03:31:39-04:00 2026-03-19 03:46:39-04:00  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-38...  SNOMED-CT  430193006  Medication reconcilia...     307.92        <NA>              None
+1 2026-05-21 03:31:39-04:00 2026-05-21 03:46:39-04:00  aee7bbe1-0c45-c028-1e...  aee7bbe1-0c45-c028-0c...  SNOMED-CT  430193006  Medication reconcilia...    1231.70        <NA>              None
+2 2017-05-01 09:27:47-04:00 2017-05-01 09:42:47-04:00  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-d2...  SNOMED-CT  430193006  Medication reconcilia...     307.92        <NA>              None
+
+=== raw_providers (1,765 rows, 14 columns) ===
+Id [VARCHAR], ORGANIZATION [VARCHAR], NAME [VARCHAR], GENDER [VARCHAR], SPECIALITY [VARCHAR], ADDRESS [VARCHAR], CITY [VARCHAR], STATE [VARCHAR], ZIP [BIGINT], LAT [DOUBLE], LON [DOUBLE], ENCOUNTERS [BIGINT], PROCEDURES [BIGINT], NPI [BIGINT]
+                         Id              ORGANIZATION                    NAME GENDER        SPECIALITY                ADDRESS     CITY STATE        ZIP        LAT        LON  ENCOUNTERS  PROCEDURES         NPI
+0  ad75f494-37ed-38c5-83...  86bc61ed-4a20-353b-a1...        Keith571 Lind531      M  GENERAL PRACTICE  9063 POINT CYPRESS DR  ORLANDO    FL  328365475  28.542111 -81.379030        2151           0  9999857698
+1  e9c1b56e-9075-303d-97...  34afeffb-3b50-3b12-80...      Cody889 Gaylord332      M  GENERAL PRACTICE      8625 COLLIER BLVD   NAPLES    FL  341143550  26.114256 -81.687258          14           0  9999772491
+2  fd0f61fa-a69f-3a6c-a2...  8ce7e2ba-6b9c-3573-aa...  Broderick767 Little434      M  GENERAL PRACTICE   11786 SE FEDERAL HWY  JUPITER    FL  334584631  26.934225 -80.094209         308           0  9999648097
+
+=== raw_supplies (31,670 rows, 6 columns) ===
+DATE [DATE], PATIENT [VARCHAR], ENCOUNTER [VARCHAR], CODE [BIGINT], DESCRIPTION [VARCHAR], QUANTITY [BIGINT]
+        DATE                   PATIENT                 ENCOUNTER        CODE               DESCRIPTION  QUANTITY
+0 2018-05-21  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-56...   277183007  Dental equipment (phy...         1
+1 2018-05-21  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-56...  1230220004  Conventional release ...         1
+2 2018-05-21  4f083ce3-f12b-bb4b-73...  4f083ce3-f12b-bb4b-56...   469020004  Dental floss (physica...         1
