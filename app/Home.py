@@ -1,4 +1,6 @@
 """Ask Your KPIs — Health Plan Edition · Home (Phase 0 starter)."""
+from pathlib import Path
+
 import duckdb
 import pandas as pd
 import plotly.express as px
@@ -12,10 +14,13 @@ st.caption(
     "[Synthea](https://synthea.mitre.org) · work in progress"
 )
 
+# Find app_data/ next to this project, no matter which folder the app is started from
+DATA = Path(__file__).resolve().parent.parent / "app_data"
+
 con = duckdb.connect()
-members = con.execute("SELECT * FROM 'app_data/members.parquet'").fetchdf()
-payers = con.execute("SELECT * FROM 'app_data/payers.parquet'").fetchdf()
-claims = con.execute("SELECT * FROM 'app_data/claims_by_year.parquet'").fetchdf()
+members = con.execute(f"SELECT * FROM '{DATA / 'members.parquet'}'").fetchdf()
+payers = con.execute(f"SELECT * FROM '{DATA / 'payers.parquet'}'").fetchdf()
+claims = con.execute(f"SELECT * FROM '{DATA / 'claims_by_year.parquet'}'").fetchdf()
 
 living = members[members["death_date"].isna()].copy()
 living["age"] = (pd.Timestamp.today() - pd.to_datetime(living["birth_date"])).dt.days // 365
